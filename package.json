@@ -17,7 +17,10 @@
     "build": "tsc && vite build && electron-builder -w",
     "release": "tsc && vite build && electron-builder -m zip"
   },
-  "dependencies": {},
+  "dependencies": {
+    "setinterval": "^0.2.4",
+    "systeminformation": "^5.17.12"
+  },
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
