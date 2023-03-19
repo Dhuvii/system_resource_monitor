@@ -26,8 +26,8 @@ function App() {
   useEffect(() => {
     window.Main.getUserReport();
 
-    window.Main.on("user", (data) => {
-      const d = data as SysInfo["user"];
+    window.Main.on("user", (data: SysInfo["user"]) => {
+      const d = data;
       updateStore(d);
     });
   }, []);

@@ -27,8 +27,8 @@ const CpuUsage = () => {
   useEffect(() => {
     window.Main.getCpuReport();
 
-    window.Main.on("cpuUsage", (data) => {
-      const d = data as SysInfo["cpuUsage"];
+    window.Main.on("cpuUsage", (data: SysInfo["cpuUsage"]) => {
+      const d = data;
       updateStore(d);
     });
 

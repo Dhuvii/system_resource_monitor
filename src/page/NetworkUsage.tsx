@@ -30,8 +30,8 @@ const NetworkUsage = () => {
   useEffect(() => {
     window.Main.getNetworkReport();
 
-    window.Main.on("networkUsage", (data) => {
-      const d = data as SysInfo["networkUsage"];
+    window.Main.on("networkUsage", (data: SysInfo["networkUsage"]) => {
+      const d = data;
       updateStore(d);
     });
 

@@ -1,13 +1,5 @@
 import { ipcRenderer, contextBridge } from "electron";
 
-export {};
-declare global {
-  interface Window {
-    Main: typeof api;
-    ipcRenderer: typeof ipcRenderer;
-  }
-}
-
 const api = {
   /**
    * Here you can expose functions to the renderer process
@@ -74,6 +66,8 @@ const api = {
     ipcRenderer.on(channel, (_, data) => callback(data));
   },
 };
+
+export { api, ipcRenderer };
 
 contextBridge.exposeInMainWorld("Main", api);
 /**
