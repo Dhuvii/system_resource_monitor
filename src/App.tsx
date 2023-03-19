@@ -33,66 +33,66 @@ function App() {
 
   return (
     <div className="App">
-      <div className="w-full h-screen dark:bg-[#1D202B]">
+      <div className="w-full h-screen bg-[#1D202B]">
         {!isLoading && (
           <div className="w-full h-full">
             {/* sidebar */}
             <div className="w-80 p-3 fixed inset-y-0 left-0 ">
-              <div className="relative w-72 p-2 h-full rounded-xl bg-gray-100 dark:bg-gradient-to-bl dark:to-[#1D202B] dark:from-[#2A303F] shadow-xl border border-gray-800">
+              <div className="relative w-72 p-2 h-full rounded-xl bg-gradient-to-bl to-[#1D202B] from-[#2A303F] shadow-xl border border-gray-800">
                 <div className="w-full">
                   <Lottie animationData={userIcon} loop play />
                 </div>
 
-                <p className="mt-2 text-xl text-center font-semibold text-gray-800 dark:text-white">
+                <p className="mt-2 text-xl text-center font-semibold text-white">
                   {user?.manufacturer}
                 </p>
-                <p className="text-xs text-center text-gray-500 dark:text-gray-400">
+                <p className="text-xs text-center text-gray-400">
                   {user?.model}
                 </p>
 
                 {/* system details */}
                 <div className="mt-5 w-full  flex flex-col items-start justify-start gap-3">
                   <div className="w-full px-3 py-1 rounded-md flex-shrink-0 grid grid-cols-2 items-center justify-center gap-2">
-                    <h4 className="text-xs uppercase tracking-wide font-normal text-gray-500 dark:text-gray-400">
+                    <h4 className="text-xs uppercase tracking-wide font-normal text-gray-400">
                       user
                     </h4>
-                    <p className="text-sm text-gray-800 dark:text-white text-right truncate">
+                    <p className="text-sm text-white text-right truncate">
                       {user?.userName}
                     </p>
                   </div>
 
                   <div className="w-full px-3 py-1 rounded-md flex-shrink-0 grid grid-cols-2 items-center justify-center gap-2">
-                    <h4 className="text-xs uppercase tracking-wide whitespace-nowrap font-normal text-gray-500 dark:text-gray-400">
+                    <h4 className="text-xs uppercase tracking-wide whitespace-nowrap font-normal text-gray-400">
                       Chip
                     </h4>
-                    <p className="text-sm text-gray-800 dark:text-white text-right">
+                    <p className="text-sm text-white text-right">
                       {user?.arch}
                     </p>
                   </div>
 
                   <div className="w-full px-3 py-1 rounded-md flex-shrink-0 grid grid-cols-2 items-center justify-center gap-2">
-                    <h4 className="text-xs uppercase tracking-wide whitespace-nowrap font-normal text-gray-500 dark:text-gray-400">
+                    <h4 className="text-xs uppercase tracking-wide whitespace-nowrap font-normal text-gray-400">
                       Memory
                     </h4>
-                    <p className="text-sm whitespace-nowrap text-gray-800 dark:text-white text-right">
+                    <p className="text-sm whitespace-nowrap text-white text-right">
                       {convertSize(user?.memory, 1024 * 1024 * 1024, 2)} GB
                     </p>
                   </div>
 
                   <div className="w-full px-3 py-1 rounded-md flex-shrink-0 grid grid-cols-2 items-center justify-center gap-2">
-                    <h4 className="text-xs uppercase tracking-wide whitespace-nowrap font-normal text-gray-500 dark:text-gray-400">
+                    <h4 className="text-xs uppercase tracking-wide whitespace-nowrap font-normal text-gray-400">
                       Serial number
                     </h4>
-                    <p className="text-sm whitespace-nowrap text-gray-800 dark:text-white text-right">
+                    <p className="text-sm whitespace-nowrap text-white text-right">
                       {user?.serial}
                     </p>
                   </div>
 
                   <div className="w-full px-3 py-1 rounded-md flex-shrink-0 grid grid-cols-2 items-center justify-center gap-2">
-                    <h4 className="text-xs uppercase tracking-wide whitespace-nowrap font-normal text-gray-500 dark:text-gray-400">
+                    <h4 className="text-xs uppercase tracking-wide whitespace-nowrap font-normal text-gray-400">
                       Os
                     </h4>
-                    <p className="text-sm whitespace-nowrap text-gray-800 dark:text-white text-right">
+                    <p className="text-sm whitespace-nowrap text-white text-right">
                       {user?.codename}
                     </p>
                   </div>
@@ -154,7 +154,7 @@ function App() {
             {/*end of sidebar */}
 
             {/* content */}
-            <div className="w-full h-screen overflow-y-auto min-w-0 pl-[19.4rem] p-3 py-3 bg-white dark:bg-[#1D202B]">
+            <div className="w-full h-screen overflow-y-auto min-w-0 pl-[19.4rem] p-3 py-3 bg-[#1D202B]">
               {selectedTab === "cpu" && <CpuUsage />}
               {selectedTab === "memory" && <MemoryUsage />}
               {selectedTab === "network" && <NetworkUsage />}
