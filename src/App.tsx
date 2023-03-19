@@ -11,6 +11,7 @@ import BatteryUsage from "./page/BatteryUsage";
 import CpuUsage from "./page/CpuUsage";
 import MemoryUsage from "./page/MemoryUsage";
 import NetworkUsage from "./page/NetworkUsage";
+import SplashScreen from "./components/SplashScreen";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState<
@@ -163,6 +164,8 @@ function App() {
             {/* end of content */}
           </div>
         )}
+
+        {isLoading && <SplashScreen />}
       </div>
     </div>
   );
