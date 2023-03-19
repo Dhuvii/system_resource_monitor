@@ -4,6 +4,7 @@ import { SysInfo } from "../../types";
 import CircularProgress from "../components/CircularProgress";
 import LineChart from "../components/LineChart";
 import convertSize from "../utilities/convertSize";
+import Loader from "@/components/Loader";
 
 const MemoryUsage = () => {
   const timeData = useMemoryStore((state) => state.timeElapsed);
@@ -112,9 +113,12 @@ const MemoryUsage = () => {
       )}
 
       {isLoading && (
-        <div className="w-full h-screen flex items-center justify-center">
-          <p className="text-xs text-white italic">
-            Crunching memory information...
+        <div className="w-full h-screen flex flex-col items-center justify-center">
+          <div className="">
+            <Loader />
+          </div>
+          <p className="mt-5 text-[0.65rem] text-gray-400 tracking-wide">
+            Gathering memory information, please wait
           </p>
         </div>
       )}
