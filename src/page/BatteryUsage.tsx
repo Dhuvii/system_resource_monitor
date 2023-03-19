@@ -24,8 +24,8 @@ const BatteryUsage = () => {
   useEffect(() => {
     window.Main.getBatteryReport();
 
-    window.Main.on("batteryUsage", (data) => {
-      const d = data as SysInfo["batteryUsage"];
+    window.Main.on("batteryUsage", (data: SysInfo["batteryUsage"]) => {
+      const d = data;
       updateStore(d);
     });
 

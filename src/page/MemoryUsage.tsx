@@ -19,8 +19,8 @@ const MemoryUsage = () => {
   useEffect(() => {
     window.Main.getMemoryReport();
 
-    window.Main.on("memoryUsage", (data) => {
-      const d = data as SysInfo["memoryUsage"];
+    window.Main.on("memoryUsage", (data: SysInfo["memoryUsage"]) => {
+      const d = data;
       updateStore(d);
     });
 
