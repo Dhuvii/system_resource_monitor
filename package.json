@@ -14,8 +14,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && electron-builder -w",
-    "release": "tsc && vite build && electron-builder -m zip"
+    "build": "tsc && vite build && electron-builder",
+    "release": "tsc && vite build && electron-builder"
   },
   "dependencies": {
     "setinterval": "^0.2.4",
