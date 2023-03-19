@@ -7,6 +7,11 @@ import userIcon from "./assets/user.json";
 import useUserStore from "./store/userStore";
 import convertSize from "./utilities/convertSize";
 
+import BatteryUsage from "./page/BatteryUsage";
+import CpuUsage from "./page/CpuUsage";
+import MemoryUsage from "./page/MemoryUsage";
+import NetworkUsage from "./page/NetworkUsage";
+
 function App() {
   const [selectedTab, setSelectedTab] = useState<
     "cpu" | "memory" | "network" | "battery"
@@ -150,10 +155,10 @@ function App() {
 
             {/* content */}
             <div className="w-full h-screen overflow-y-auto min-w-0 pl-[19.4rem] p-3 py-3 bg-white dark:bg-[#1D202B]">
-              {/* {selectedTab === "cpu" && <CpuUsage />}
+              {selectedTab === "cpu" && <CpuUsage />}
               {selectedTab === "memory" && <MemoryUsage />}
               {selectedTab === "network" && <NetworkUsage />}
-              {selectedTab === "battery" && <BatteryUsage />} */}
+              {selectedTab === "battery" && <BatteryUsage />}
             </div>
             {/* end of content */}
           </div>
