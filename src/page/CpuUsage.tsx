@@ -4,6 +4,7 @@ import useCpuStore from "../store/cpuStore";
 import { SysInfo } from "../../types";
 import Gauge from "../components/Gauge";
 import LineChart from "../components/LineChart";
+import Loader from "@/components/Loader";
 
 const CpuUsage = () => {
   const isLoading = useCpuStore((state) => state.isLoading);
@@ -200,9 +201,12 @@ const CpuUsage = () => {
       )}
 
       {isLoading && (
-        <div className="w-full h-screen flex items-center justify-center">
-          <p className="text-xs text-white italic">
-            Crunching cpu information...
+        <div className="w-full h-screen flex flex-col items-center justify-center">
+          <div className="">
+            <Loader />
+          </div>
+          <p className="mt-5 text-[0.65rem] text-gray-400 tracking-wide">
+            Gathering cpu information, please wait
           </p>
         </div>
       )}

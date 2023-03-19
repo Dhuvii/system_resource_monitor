@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import useNetworkStore from "../store/networkStore";
 import { SysInfo } from "../../types";
 import Table from "../components/Table";
+import Loader from "@/components/Loader";
 
 const NetworkUsage = () => {
   const dataRecievedReadingData = useNetworkStore(
@@ -169,9 +170,12 @@ const NetworkUsage = () => {
       )}
 
       {isLoading && (
-        <div className="w-full h-screen flex items-center justify-center">
-          <p className="text-xs text-white italic">
-            Crunching network information...
+        <div className="w-full h-screen flex flex-col items-center justify-center">
+          <div className="">
+            <Loader />
+          </div>
+          <p className="mt-5 text-[0.65rem] text-gray-400 tracking-wide">
+            Gathering network information, please wait
           </p>
         </div>
       )}

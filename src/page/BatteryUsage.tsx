@@ -4,6 +4,7 @@ import { intervalToDuration } from "date-fns";
 import useBatteryStore from "../store/batteryStore";
 import { SysInfo } from "../../types";
 import Battery from "../components/Battery";
+import Loader from "@/components/Loader";
 
 const BatteryUsage = () => {
   const convertTime = (secs: number) => {
@@ -115,9 +116,12 @@ const BatteryUsage = () => {
       )}
 
       {isLoading && (
-        <div className="w-full h-screen flex items-center justify-center">
-          <p className="text-xs text-white italic">
-            Crunching battery information...
+        <div className="w-full h-screen flex flex-col items-center justify-center">
+          <div className="">
+            <Loader />
+          </div>
+          <p className="mt-5 text-[0.65rem] text-gray-400 tracking-wide">
+            Gathering battery information, please wait
           </p>
         </div>
       )}
